@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Attempting to access a non-existent element before it's created.
+    document.getElementById("myDiv").innerHTML = "This text will not appear.";
+    // This will fix it, creating element before assigning it content.
+    var div = document.createElement('div');
+    div.id = "myDiv";
+    div.innerHTML = "This text will appear.";
+    document.body.appendChild(div);
+  </script>
+</body>
+</html>
